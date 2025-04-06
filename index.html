@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Boldonse -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+    <!-- Montsterrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <dialog id="welcome-modal">
+        <p>Welcome to Tic Tac Toe!</p>
+        <form id="playerNames" action="" method="post">
+            <label for="player1">Player One</label>
+            <input type="text" id="player1" name="player1" placeholder="Name" required>
+
+            <label for="player2">Player Two</label>
+            <input type="text" id="player2" name="player2" placeholder="Name" required>
+
+            <button type="submit">Submit</button>
+        </form> 
+    </dialog>
+    
+    <div class="title">
+        <p>Tic Tac Toe</p>
+    </div>
+
+    <div class="btns">
+        <button id="play-again">Play Again</button>
+    </div>
+    
+    <dialog id="result-modal">
+        <p class="modal-message">Player 1 Wins!</p>
+        <p class="play-again">Press "Play Again" To Start A New Game</p>
+    </dialog>
+
+    <div class="player-icons">
+        <img id="player-one-img" src="https://cdn-icons-png.flaticon.com/512/1114/1114273.png" alt="player one icon">
+        <img id="player-two-img" src="https://cdn-icons-png.flaticon.com/512/1114/1114273.png" alt="player two icon">
+    </div>
+    
+    <div id="player-one-name">
+        <p class="player-one">Player One</p>
+    </div>
+
+    <div id="player-two-name">
+        <p class="player-two">Player Two</p>
+    </div>
+
+
+    <div class="board">
+        <div class="tile" data-index="0"></div>
+        <div class="tile" data-index="1"></div>
+        <div class="tile" data-index="2"></div>
+        <div class="tile" data-index="3"></div>
+        <div class="tile" data-index="4"></div>
+        <div class="tile" data-index="5"></div>
+        <div class="tile" data-index="6"></div>
+        <div class="tile" data-index="7"></div>
+        <div class="tile" data-index="8"></div>
+    </div>
+
+    
+    <script src="index.js"></script>
+</body>
+</html>

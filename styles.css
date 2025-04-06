@@ -1,0 +1,202 @@
+:root {
+    --primary-color: #7c5bf2;
+    --secondary-color: #f2789f;
+    --bg-color: #f9f9f9;
+    --text-color: #333333;
+    --tile-bg: #ffffff;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    margin-bottom: 2rem;
+  }
+  
+  .title p {
+    font-family: 'Boldonse', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1/1;
+    margin: 2rem auto;
+  }
+  
+  .tile {
+    background-color: var(--tile-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .tile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .tile.x::before {
+    content: "X";
+    color: var(--primary-color);
+  }
+  
+  .tile.o::before {
+    content: "O";
+    color: var(--secondary-color);
+  }
+  
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  button:hover {
+    background-color: #6a49e8;
+    transform: translateY(-2px);
+  }
+  
+  .player-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .player-icons img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  #player-one-name, #player-two-name {
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  #player-one-name {
+    color: var(--primary-color);
+  }
+  
+  #player-two-name {
+    color: var(--secondary-color);
+  }
+  
+  dialog {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    background-color: white;
+  }
+  
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  #welcome-modal p, #result-modal .modal-message {
+    font-family: 'Boldonse', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  #result-modal .play-again {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  input:focus {
+    outline: 2px solid var(--primary-color);
+    border-color: transparent;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: -0.4rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 500px) {
+    .title p {
+      font-size: 2.5rem;
+    }
+    
+    .board {
+      max-width: 320px;
+    }
+    
+    .tile {
+      font-size: 2rem;
+    }
+  }
